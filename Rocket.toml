@@ -1,0 +1,23 @@
+[default]
+address = "127.0.0.1"
+port = 8000
+workers = 16
+max_blocking = 512
+keep_alive = 5
+ident = "PWNED"
+log_level = "normal"
+temp_dir = "/tmp"
+cli_colors = true
+secret_key = "f73138dc8b3de376d799dcda8b7cb988bb092a295956585553a502819f1c3597"
+
+[release.tls]
+certs = "path/to/cert-chain.pem"
+key = "path/to/key.pem"
+
+[default.databases.Vote]
+url = "/etc/vote/vote.db"
+
+min_connections = 64
+max_connections = 1024
+connect_timeout = 5
+idle_timeout = 120
