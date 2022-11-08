@@ -1,4 +1,4 @@
-# Compromise communication channel between API and keyserver
+# Compromise keyserver network and extract cookie encryption key
 
 ## Reconnaissance
 
