@@ -55,7 +55,7 @@ func main() {
 	if _, err := rand.Read(k); err != nil {
 		log.Fatal(err)
 	}
-	key := base64.StdEncoding.EncodeToString(k)
+	key = base64.StdEncoding.EncodeToString(k)
 	log.Printf("Generated key: %s", key)
 
 	log.Printf("Starting server on %s", server.Addr)
