@@ -4,6 +4,7 @@ import (
 	"crypto/rand"
 	"crypto/tls"
 	"crypto/x509"
+	"encoding/base64"
 	"flag"
 	"fmt"
 	"log"
@@ -49,12 +50,12 @@ func main() {
 		w.Write([]byte(key))
 	})
 
-	// Generate random 256bit key
+	// Generate random 32 byte base6464 key
 	k := make([]byte, 32)
-	if _, err = rand.Read(k); err != nil {
+	if _, err := rand.Read(k); err != nil {
 		log.Fatal(err)
 	}
-	key = fmt.Sprintf("%x", k)
+	key := base64.StdEncoding.EncodeToString(k)
 	log.Printf("Generated key: %s", key)
 
 	log.Printf("Starting server on %s", server.Addr)
