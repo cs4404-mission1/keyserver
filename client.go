@@ -13,10 +13,10 @@ import (
 
 var (
 	rocketConfig   = flag.String("rocket-config", "Rocket.toml", "Rocket config file")
-	caCertFile     = flag.String("ca-cert", "tls/certs/ca.pem", "CA certificate")
-	clientCertFile = flag.String("client-cert", "tls/certs/client.pem", "Client certificate")
-	clientKeyFile  = flag.String("client-key", "tls/keys/client.pem", "Client key")
-	url            = flag.String("url", "https://172.16.10.1", "URL to fetch secret key from")
+	caCertFile     = flag.String("ca-cert", "ca-crt.pem", "CA certificate")
+	clientCertFile = flag.String("client-cert", "api.internal-crt.pem", "Client certificate")
+	clientKeyFile  = flag.String("client-key", "api.internal-key.pem", "Client key")
+	url            = flag.String("url", "https://keyserver.internal", "URL to fetch secret key from")
 )
 
 func replaceSecret(secret string) error {
